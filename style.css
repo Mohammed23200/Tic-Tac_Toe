@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+}
+
+.btn {
+    background: linear-gradient(145deg, #ffd700, #b89f00);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5), 0 -5px 10px rgba(255, 215, 0, 0.2);
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.8), 0 -3px 10px rgba(255, 215, 0, 0.3);
+}
+
+#board {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+    perspective: 1000px;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
+    grid-template-rows: repeat(3, 1fr); /* Default to 3 rows */
+    width: 300px; /* Set a fixed width for the board */
+    height: 300px; /* Set a fixed height for the board */
+}
+
+.tile {
+    background: linear-gradient(145deg, #333, #222);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    color: gold;
+    border: 2px solid gold;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tile:hover {
+    transform: rotateX(10deg) rotateY(10deg);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8), -10px -10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.tile.x {
+    color: gold;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+}
+
+.tile.o {
+    color: gold;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+}
+
+#reset {
+    margin-top: 20px;
+}
+
+.message {
+    font-size: 2rem;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    display: none;
+    margin-top: 20px;
+    opacity: 0;
+}
+
+#winner-message.show {
+    display: block;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+<div id="home" class="screen active">
+    <h1 class="title">Tic Tac Toe</h1>
+    <button class="btn" id="play-ai">Play with AI</button>
+    <button class="btn" id="play-friend">Play with Your Friend</button>
+</div>
+
+<div id="player-names" class="screen">
+    <h2 class="title">Enter Player Names</h2>
+    <input type="text" id="player1" placeholder="Player 1 Name" />
+    <input type="text" id="player2" placeholder="Player 2 Name" />
+    <button class="btn" id="start-game">Start Game</button>
+</div>
+
+<div id="choose-symbol" class="screen">
+    <h2 class="title">Choose Your Symbol</h2>
+    <button class="btn" id="choose-x">X</button>
+    <button class="btn" id="choose-o">O</button>
+</div>
+
+<div id="difficulty" class="screen">
+    <h2 class="title">Select Difficulty</h2>
+    <button class="btn" id="easy">Easy</button>
+    <button class="btn" id="medium">Medium</button>
+    <button class="btn" id="hard">Hard</button>
+    <button class="btn" id="extreme">Extreme</button>
+</div>
+
+<div id="board-size" class="screen">
+    <h2 class="title">Choose Board Size</h2>
+    <button class="btn" data-size="3">3 x 3</button>
+    <button class="btn" data-size="4">4 x 4</button>
+    <button class="btn" data-size="5">5 x 5</button>
+</div>
+
+<div id="game-board" class="screen">
+    <h2 class="title" id="game-status"></h2>
+    <div id="board"></div>
+    <button class="btn" id="reset">Reset Game</button>
+    <div id="winner-message" class="message"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
